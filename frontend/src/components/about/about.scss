@@ -1,0 +1,42 @@
+#about {
+  max-width: 60%;
+  padding: 25px;
+}
+
+ol {
+    counter-reset: list;
+}
+ol > li {
+    list-style: none;
+    position: relative;
+}
+ol > li:before {
+    counter-increment: list;
+    content: "(" counter(list, lower-roman) ") ";
+    position: absolute;
+}
+
+.goals {
+  margin-left: 2em;
+}
+
+.image-container {
+  padding: 25px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 10%;
+  padding: 15px;
+}
+
+.header-label {
+  text-align: center;
+  font-weight: bold;
+}

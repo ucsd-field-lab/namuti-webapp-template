@@ -1,0 +1,30 @@
+.top-bar {
+  background-color: #34414F;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.top-bar .menu {
+  background-color: #34414F !important;
+}
+
+.top-bar .menu a:hover {
+  color: #A5D29F;
+}
+
+.top-bar .row {
+  max-width: 50%;
+}
+
+.top-bar a {
+  color: inherit;
+}
+
+.top-bar .active {
+  color: #A5D29F;
+  border-bottom: 5px solid #A5D29F;
+}
+ 
+
+ /*# sourceMappingURL= navbar.css.map */

@@ -1,0 +1,62 @@
+#recording-search {
+  width: 500px;
+}
+
+.search-clips-list {
+  list-style: none;
+}
+
+.search-clips-item {
+  margin-bottom: 20px;
+}
+
+.searched-language {
+  background-color: #FFFF7F;
+}
+
+#no-match-found {
+  margin: 10px;
+}
+
+.matching-clips-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.keyword {
+  background-color: #98FB98;
+  display: inline-block;
+}
+
+.new-ortho {
+  font-weight: bold;
+}
+
+.search-examples {
+  list-style: none;
+}
+
+.search-examples .search-example {
+  display: inline-block;
+  padding: 15px;
+  color: white;
+}
+
+.search-examples .search-example .example-language {
+  font-weight: bold;
+  background-color: #ffe47a;
+  padding: 10px;
+}
+
+.search-examples .search-example .example-keyword {
+  font-weight: bold;
+  background-color: #33cccc;
+  padding: 10px;
+}
+
+.search-examples .search-example:hover {
+  cursor: pointer;
+}
+ 
+
+ /*# sourceMappingURL= search.css.map */

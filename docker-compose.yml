@@ -1,0 +1,51 @@
+version: '3'
+services:
+
+  reverse_proxy:
+    build:
+      context: ./backend/nginx
+      args:
+        app_env: ${APP_ENV}
+    restart: always
+    volumes:
+      - ./backend/nameforyourprojectbackend:/opt/project/projectname/backend/nameforyourprojectbackend
+      - ./frontend/build:/opt/project/projectname/frontend/build
+      # - /mnt/parody:/mnt/parody
+    ports:
+      - "80:80"
+    command: /bin/bash -c "nginx -g 'daemon off;'"
+    depends_on:
+      - django
+
+  django:
+    build:
+      context: ./backend/nameforyourprojectbackend
+      args:
+        app_env: ${APP_ENV}
+    volumes:
+      - ./backend/nameforyourprojectbackend:/opt/project/projectname/backend/nameforyourprojectbackend
+    expose:
+      - "8080"
+    env_file:
+      - db.env
+    environment:
+      - APP_ENV=${APP_ENV}
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
+      - PYTHONUNBUFFERED=0 # fixes python output buffering problem
+    links:
+      - pg
+
+  pg:
+    build: ./backend/db
+    volumes:
+      - pg-data:/pgdata
+      - ./backend/db/yourproject.sql:/docker-entrypoint-initdb.d/yourproject.sql
+    ports:
+      - "5432"
+    env_file:
+      - db.env
+    environment:
+      - PGDATA=/pgdata
+
+volumes:
+  pg-data:

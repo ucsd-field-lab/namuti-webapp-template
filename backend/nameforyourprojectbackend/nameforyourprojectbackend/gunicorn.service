@@ -1,0 +1,13 @@
+[Unit]
+Description=Django with Gunicorn
+After=network.target
+
+[Service]
+User=www-data
+Group=ling-nameforyourprojectbackend
+WorkingDirectory=/opt/project/nameforyourprojectbackend/
+ExecStart=/home/kjmach/anaconda3/envs/nameforyourprojectbackendenv/bin/gunicorn --workers 3 --bind 127.0.0.1:8000 nameforyourprojectbackend.wsgi:application
+EnvironmentFile=/opt/project/.env
+
+[Install]
+WantedBy=multi-user.target

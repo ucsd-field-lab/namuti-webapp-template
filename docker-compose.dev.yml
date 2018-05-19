@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+  react:
+    build: ./frontend
+    volumes:
+      - ./frontend:/opt/project/projectname/frontend
+      - /opt/project/projectname/frontend/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      

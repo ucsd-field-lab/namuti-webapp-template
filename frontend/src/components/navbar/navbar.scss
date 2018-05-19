@@ -1,0 +1,27 @@
+.top-bar {
+	background-color: #34414F;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+
+	.menu {
+		background-color: #34414F !important;
+
+		a:hover {
+			color: #A5D29F;
+		}
+	}
+
+	.row {
+		max-width: 50%;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	.active {
+		color: #A5D29F;
+		border-bottom: 5px solid #A5D29F;		
+	}
+}
